@@ -4,7 +4,7 @@
 #### Contents
 
 * Week 0
-  * [My First Website(https://github.com/green-fox-academy/bran-mot/tree/master/week-00/myFirstWebsite)
+  * [My First Website](https://github.com/green-fox-academy/bran-mot/tree/master/week-00/myFirstWebsite)
 * Week 1
   * Day 2
     * [Blog](https://github.com/green-fox-academy/bran-mot/tree/master/week-01/day-02/blog)
