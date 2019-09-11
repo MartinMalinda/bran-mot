@@ -1,0 +1,23 @@
+body{
+    line-height: 1.5;
+    font-family: sans-serif;
+    margin:0;
+    padding: 0;
+}
+header{
+    background-color: blueviolet;
+    color: white;
+}
+.container{
+     padding: 3rem;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float:right;
+}
+ul > li{
+    display: inline-block;
+    float: left;
+}

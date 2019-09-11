@@ -1,0 +1,45 @@
+html{
+    background-image: url('assets/background.png');
+    font-family: 'consolas', 'courier';
+    font-size: 16px;
+}
+body{
+    margin: 0;
+}
+h1, h2, h3{
+    font-family: 'Noto Sans SC', sans-serif;
+}
+h2{
+    color: #ff0099;
+}
+hr{
+    border: none;
+    text-align: center;
+}
+hr::before{
+    content: '---';
+}
+nav{
+    background-color: #333333;
+    padding: 10px;
+}
+nav .right.nav{
+    float:right;
+}
+nav ul li {
+    display: inline;
+    margin-left: 10px;
+}
+nav ul li a{
+    color: #ff0099;
+}
+header, main{
+    padding: 0 10%;
+}
+dt{
+    font-size: 1.25em;
+    margin-bottom: 6px;
+}
+dd{
+    margin-bottom: 18px;
+}

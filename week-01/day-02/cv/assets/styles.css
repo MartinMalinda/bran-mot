@@ -1,0 +1,95 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+header{
+    background-image: url('img/anakin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 350px;
+    padding: 100px 0 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #5f5f5f;
+    font-family: 'Playfair Display',serif;
+}
+h1{
+    font-size:4em;
+    margin:0;
+}
+h2{
+    font-size:3em;
+    margin:0;
+}
+h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+}
+strong{
+    font-weight: bold;
+}
+.fluid{
+    width: 100%;
+    flex-grow: 1;
+}
+.container{
+    display: flex;
+    padding: 0 20%;
+}
+.intro{
+    padding: 0 30%;
+    font-size: 1.25em;
+}
+.content-center{
+    display: flex;
+    justify-content: center; 
+}
+blockquote{
+    background-color: #000000;
+    max-width: 300px;
+    text-align:center;
+    color: #ffffff;
+    font-size: 2em;
+    padding: 20px;
+    position: relative;
+}
+blockquote > span:before {
+    font-family: 'Playfair Display', sans-serif;
+    content: open-quote;
+    font-size: 3em;
+    opacity: .5;
+    z-index: -10;
+    display: block;
+    text-align: left;
+    height: 50px;
+}
+.column{
+    padding: 0 12px;
+}
+.two.thirds.column{
+    flex-basis: 66%;
+}
+.one.third.column{
+    flex-basis: 33%;
+}
+.two.thirds.column blockquote{
+    max-width: unset;
+    background-color: transparent;
+    text-align:left;
+    color: #666666;
+    font-size: 1.5em;
+    padding: 0;
+    position: relative;
+}
+.two.thirds.column blockquote span:before {
+    font-family: 'Playfair Display', sans-serif;
+    content: open-quote;
+    font-size: 3em;
+    opacity: .5;
+    z-index: -10;
+    display: block;
+    text-align: left;
+    height: 50px;
+}
