@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace GreenFox
 {
@@ -20,7 +20,6 @@ namespace GreenFox
             int sum = firstInt + secondInt + thirdInt + fourthInt + fifthInt;
             double average = (double)sum / 5; 
             Console.WriteLine("Sum: "+ sum +", Average: " + average);
-            //Console.WriteLine(firstInt);
         }
     }
 }
