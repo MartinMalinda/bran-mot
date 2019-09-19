@@ -6,7 +6,7 @@ namespace dataStructures
 {
     class Program
     {
-        public static Dictionary<string, int> CreateMap (string[] productsToAdd, int[] pricesToAdd)
+        public static Dictionary<string, int> CreateMap(string[] productsToAdd, int[] pricesToAdd)
         {
             Dictionary<string, int> productDatabase = new Dictionary<string, int>();
 
@@ -50,15 +50,41 @@ namespace dataStructures
             }
             return qtyBelow;
         }
-        public static string ProductsExactlyAtPrice (Dictionary<string, int> pricesToSearch, int exactPrice)
+        public static string ProductsExactlyAtPrice(Dictionary<string, int> pricesToSearch, int exactPrice)
         {
-            if(pricesToSearch.ContainsValue(exactPrice)){
+            if (pricesToSearch.ContainsValue(exactPrice)) {
                 return "You can buy something with " + exactPrice;
             }
             else
             {
                 return "You cannot buy something with " + exactPrice;
             }
+        }
+        public static string MostExpensiveOrCheapest(Dictionary<string, int> productsToSort, string position){
+            int[] prices = new int[productsToSort.Count];
+            string[] products = new string[productsToSort.Count];
+            int i = 0;
+            foreach(KeyValuePair<string, int> item in productsToSort)
+            {
+                products[i] = item.Key;
+                prices[i] = item.Value;
+                i++;
+            }
+            Array.Sort(prices, products);
+
+            if (position == "cheapest")
+            {
+                return products[0];
+            }
+            else if (position == "expensive")
+            {
+                return products[products.Length - 1];
+            }
+            else
+            {
+                return "Error";
+            }
+
         }
         static void Main(string[] args)
         {
@@ -82,6 +108,9 @@ namespace dataStructures
             Console.WriteLine(PriceLookup("Fish", db));
 
             //What is the most expensive product?
+            Console.WriteLine("The most expensive item is: {0}", MostExpensiveOrCheapest(db, "expensive"));
+           
+
             //What is the average price?
             Console.WriteLine("The average price of all items is {0}", GetAveragePrice(db));
 
@@ -92,7 +121,8 @@ namespace dataStructures
             Console.WriteLine(ProductsExactlyAtPrice(db, 125));
 
             //What is the cheapest product ?
-
+            Console.WriteLine("The cheapest item is: {0}", MostExpensiveOrCheapest(db, "cheapest"));
+            //solution: create a loop that fills in an array, sort the array, provide array[0]
 
 
         }
