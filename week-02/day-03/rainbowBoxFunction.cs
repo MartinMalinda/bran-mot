@@ -29,7 +29,7 @@ namespace DrawingApplication
             double maxSize = canvas.Height;
             Color[] colors = { Colors.Red, Colors.Orange, Colors.Yellow, Colors.Green, Colors.Blue, Colors.Indigo, Colors.Violet};            
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < colors.Length; i++)
             {
                 CenteredRainbow(foxDraw, maxSize, colors[i]);
                 maxSize-=15;
