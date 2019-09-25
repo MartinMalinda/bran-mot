@@ -1,9 +1,9 @@
 ﻿using System;
 namespace objectsAndClasses
 {
-    public class sharpie
+    public class Counter
     {
-        public sharpie()
+        public Counter()
         {
         }
     }
