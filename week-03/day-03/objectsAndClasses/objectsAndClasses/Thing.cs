@@ -1,9 +1,9 @@
 ﻿using System;
 namespace objectsAndClasses
 {
-    public class Pokemon
+    public class Thing
     {
-        public Pokemon()
+        public Thing()
         {
         }
     }
