@@ -7,14 +7,16 @@ namespace objectsAndClasses
     {
         public static void Main(string[] args)
         {
-            //Instantiate a Student and Teacher object
-            //Call the student's Question() method and the teacher's Teach() method
+            Station chevron = new Station(1000);
+            Car honda = new Car();
+            Car hyundai = new Car();
 
-            Student Jonny = new Student();
-            Teacher Martha = new Teacher();
+            chevron.Refill(honda);
+            chevron.Refill(hyundai);
 
-            Jonny.Question(Martha);
-            Martha.Teach(Jonny);
+            Console.WriteLine(hyundai.GasAmount);
+            Console.WriteLine(honda.GasAmount);
+
         }
     }
 }
