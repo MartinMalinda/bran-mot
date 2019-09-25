@@ -1,9 +1,9 @@
 ﻿using System;
 namespace objectsAndClasses
 {
-    public class BlogPost
+    public class EmptyClass
     {
-        public BlogPost()
+        public EmptyClass()
         {
         }
     }
