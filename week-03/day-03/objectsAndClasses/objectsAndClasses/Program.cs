@@ -7,16 +7,18 @@ namespace objectsAndClasses
     {
         public static void Main(string[] args)
         {
-            Station chevron = new Station(1000);
-            Car honda = new Car();
-            Car hyundai = new Car();
+            SharpieSet mySharpies = new SharpieSet();
 
-            chevron.Refill(honda);
-            chevron.Refill(hyundai);
+            Sharpie broadTip = new Sharpie("pink", 2.5, 0);
+            Sharpie fineTip = new Sharpie("blue", 0.5, 1);
+            Sharpie chiselTip = new Sharpie("green", 1);
 
-            Console.WriteLine(hyundai.GasAmount);
-            Console.WriteLine(honda.GasAmount);
+            mySharpies.AddSharpie(broadTip);
+            mySharpies.AddSharpie(fineTip);
+            mySharpies.AddSharpie(chiselTip);
 
+            mySharpies.CountUsable();
+            mySharpies.Removetrash();
         }
     }
 }

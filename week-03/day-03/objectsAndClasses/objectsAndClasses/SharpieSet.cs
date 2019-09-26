@@ -1,9 +1,9 @@
 ﻿using System;
 namespace objectsAndClasses
 {
-    public class GasStation
+    public class SharpieSet
     {
-        public GasStation()
+        public SharpieSet()
         {
         }
     }
