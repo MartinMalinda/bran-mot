@@ -7,18 +7,22 @@ namespace objectsAndClasses
     {
         public static void Main(string[] args)
         {
-            SharpieSet mySharpies = new SharpieSet();
+            Animal cheetah = new Animal();
+            Animal turkey = new Animal();
+            Animal bear = new Animal();
 
-            Sharpie broadTip = new Sharpie("pink", 2.5, 0);
-            Sharpie fineTip = new Sharpie("blue", 0.5, 1);
-            Sharpie chiselTip = new Sharpie("green", 1);
+            Farm myFarm = new Farm(20);
 
-            mySharpies.AddSharpie(broadTip);
-            mySharpies.AddSharpie(fineTip);
-            mySharpies.AddSharpie(chiselTip);
+            myFarm.AddAnimal(cheetah);
+            myFarm.AddAnimal(turkey);
+            myFarm.AddAnimal(bear);
 
-            mySharpies.CountUsable();
-            mySharpies.Removetrash();
+            myFarm.Breed(turkey);
+
+            bear.Eat();
+            bear.Eat();
+
+            myFarm.Slaughter();
         }
     }
 }
