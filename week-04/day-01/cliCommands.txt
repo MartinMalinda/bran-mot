@@ -1,0 +1,8 @@
+//Delete both data.txt
+rm -r ./*/data.txt
+
+//Move any type of image files from program/assets/ to exam/images/
+mv program/assets/*.{jpg,png} exam/images
+
+//Commit the changes with the following message "delete txt files and move image files"
+git commit -m "delete txt files and move image files"
