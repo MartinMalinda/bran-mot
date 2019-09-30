@@ -8,45 +8,36 @@ namespace trialExam
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(MostCommonCharacters("./countchar.txt")); 
-        }
-        public static string MostCommonCharacters(string filename)
-        {
-            string fileContent = File.ReadAllText(filename);
-            fileContent.ToCharArray();
-            Dictionary<char, int> characterDictionary = new Dictionary<char, int>();
+            Pirate Jack = new Pirate("Jack");
+            Pirate Jill = new Pirate("Jill", true, true);
+            Pirate John = new Pirate("John", false, true);
 
-            foreach (var character in fileContent)
-            {
-                if (characterDictionary.ContainsKey(character))
-                {
-                    characterDictionary[character]++;
-                }
-                else
-                {
-                    characterDictionary.Add(character, 1);
-                }
-            }
+            Jack.Work();
+            Jill.Work();
+            John.Work();
 
-            int[] characterCounts = new int[characterDictionary.Count];
-            char[] characters = new char[characterDictionary.Count];
-            int counter = 0;
-            foreach (KeyValuePair<char, int> item in characterDictionary)
-            {
-                characters[counter] = item.Key;
-                characterCounts[counter] = item.Value;
-                counter++;
-            }
-            Array.Sort(characterCounts, characters);
+            Jack.Party();
+            Jill.Party();
+            John.Party();
 
-            string retrunString = "";
+            Console.WriteLine(Jack.ToString());
+            Console.WriteLine(Jill.ToString());
+            Console.WriteLine(John.ToString());
 
-            for (int i = characters.Length-1; i > characters.Length-3; i--)
-            {
-                retrunString = retrunString + characters[i] +": "+ characterCounts[i] +"\n";
-            }
+            PirateShip myShip = new PirateShip();
 
-            return retrunString;
+            myShip.AddPirate(Jill);
+            myShip.AddPirate(Jack);
+            myShip.AddPirate(John);
+
+
+            Console.WriteLine(myShip.GetPoorPirates());
+            Console.WriteLine(myShip.GetGolds());
+
+            //myShip.LastDayOnTheShip();
+
+            myShip.PrepareForBattle();
+
         }
     }
 }
