@@ -1,15 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-namespace People 
-{
-    class Person
-    {
-        public int Age;
-        public string Name;
-    }
-}
-
 namespace inhertiance 
 {
     public class Garden
