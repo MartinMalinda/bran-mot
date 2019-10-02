@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
-namespace objectsAndClasses
+namespace AbstractsAndInterfaces
 {
     public class Fleet
     {
@@ -35,5 +36,7 @@ namespace objectsAndClasses
                 counter++;
             }
         }
+
+        
     }
 }

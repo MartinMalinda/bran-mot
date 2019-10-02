@@ -1,7 +1,7 @@
 ﻿using System;
-namespace objectsAndClasses
+namespace AbstractsAndInterfaces
 {
-    public class Thing
+    public class Thing : IComparable
     {
         private string name;
         private bool completed;
@@ -36,6 +36,15 @@ namespace objectsAndClasses
         public bool GetComplete()
         {
             return this.completed;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (completed.CompareTo(obj) > 1)
+            {
+                return name.CompareTo(obj);
+            }
+            else return completed.CompareTo(obj);
         }
     }
 }
