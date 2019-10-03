@@ -1,27 +1,56 @@
 using System;
 using Xunit;
 using Testing;
+using System.Collections.Generic;
 
 namespace myTests
 {
     public class UnitTest1
     {
-        //Instantiate your class (arrange, act, assert)
-        //Use the Assert.Equal()
-        //The expected parameter should be the same string (eg. "apple")
-        //The actual parameter should be the return value of the method(eg.myObject.GetApple())
-        //Run the test
-        //Change the expected value to make the test failing
-        //Run the test
-        //Fix the returned value to make the test succeeding again
         [Fact]
         public void Test1()
         {
-            Apple redApple = new Apple("Red Delicious");
+            List<int> myNumbers= new List<int>();
+            myNumbers.Add(1);
+            myNumbers.Add(2);
+            myNumbers.Add(3);
 
-            //Assert.Equal("Red Disgusting", redApple.GetApple());
-            Assert.Equal("Red Delicious", redApple.GetApple());
+            MathOperations mySum = new MathOperations();
 
+            Assert.Equal(6, mySum.SumAll(myNumbers));    
+        }
+
+        [Fact]
+        public void TestEmptyList()
+        {
+            List<int> myNumbers = new List<int>();
+
+            MathOperations mySum = new MathOperations();
+
+            Assert.Equal(0, mySum.SumAll(myNumbers));
+        }
+
+        [Fact]
+        public void TestOneItemList()
+        {
+            List<int> myNumbers = new List<int>();
+            myNumbers.Add(1);
+
+            MathOperations mySum = new MathOperations();
+
+            Assert.Equal(1, mySum.SumAll(myNumbers));
+        }
+
+        [Fact]
+        public void TestNullList()
+        {
+            int? nullInt = null;
+            List<int?> myNumbers = new List<int?>();
+            myNumbers.Add(nullInt);
+
+            MathOperations mySum = new MathOperations();
+
+            Assert.Equal(null, mySum.SumAll(myNumbers));
         }
     }
 }

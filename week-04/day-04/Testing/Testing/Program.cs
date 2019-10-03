@@ -1,24 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Testing
 {
-    //Create a class, with one method(eg. public string GetApple()) that returns a string (eg. "apple")
-    //Create a test for that.
-    //Create an xUnit project
-    //Add a new Test case in it
-
-    public class Apple
+    public class MathOperations
     {
-        public string Name { get; set; }
-
-        public Apple(string name)
+        public MathOperations() { }
+        public int SumAll(List<int> numbersToSum)
         {
-            Name = name;
+            int sum = 0;
+
+            foreach (var number in numbersToSum)
+            {
+                sum += number;
+            }
+
+            return sum;
         }
-
-        public string GetApple()
+        public int? SumAll(List<int?> numbersToSum)
         {
-            return Name;
+            int? sum = null;
+            return sum;
         }
     }
     class Program
