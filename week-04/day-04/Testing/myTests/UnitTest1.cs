@@ -5,92 +5,32 @@ using System.Collections.Generic;
 
 namespace myTests
 {
-    public class ExtensionTests
+    public class UnitTests
     {
-        Extension extension = new Extension();
+        Sharpie broadPink = new Sharpie("pink", 2);
+        Sharpie fineRed = new Sharpie("red", 5, 0);
 
-        //[Fact]
-        //public void TestAdd_2and3is5()
-        //{
-        //    Assert.Equal(5, extension.Add(2, 3));
-        //}
-
-        //[Fact]
-        //public void TestAdd_1and4is5()
-        //{
-        //    Assert.Equal(5, extension.Add(1, 4));
-        //}
-
-        [Theory]
-        [InlineData(5, 1)]
-        [InlineData(6, 7)]
-        [InlineData(12, 3)]
-        public void TestAdd(int a, int b)
+        [Fact]
+        public void TestBroadPink()
         {
-            Assert.Equal(a+b, extension.Add(a, b));
+            Assert.Equal(100, broadPink.inkAmount);
         }
 
         [Fact]
-        public void TestMaxOfThree_First()
+        public void TestBroadPinkAfterUse()
         {
-            Assert.Equal(5, extension.MaxOfThree(5, 4, 3));
-        }
-
-        [Fact]
-        public void TestMaxOfThree_Fhird()
-        {
-            Assert.Equal(5, extension.MaxOfThree(3, 4, 5));
+            broadPink.Use();
+            Assert.Equal(99, broadPink.inkAmount);
         }
 
         [Theory]
-        [InlineData(9,1,2)]
-        [InlineData(1, 9, 2)]
-        [InlineData(1, 2, 9)]
-        public void TestMaxOfThree_Fail(int a, int b, int c)
+        [InlineData("test", 1)]
+        [InlineData("test", 'R')]
+        //[InlineData(003133, "purple")]
+        public void TestSharpieCreation(string a, int b)
         {
-            Assert.Equal(9, extension.MaxOfThree(a, b, c));
-        }
-
-        [Fact]
-        public void TestMedian_Four()
-        {
-            Assert.Equal(5, extension.Median(new List<int>() { 7, 5, 3, 5 }));
-        }
-
-        [Fact]
-        public void TestMedian_Five()
-        {
-            Assert.Equal(3, extension.Median(new List<int>() { 1, 2, 3, 4, 5 }));
-        }
-
-        [Fact]
-        public void TestMedian_Fail()
-        {
-            Assert.Equal(4, extension.Median(new List<int>() { 6, 3, 6, 9, 3, 1, 2, 8, 3, 8, 4, 3, 9 }));
-        }
-
-        [Fact]
-        public void TestIsVowel_a()
-        {
-            Assert.True(extension.IsVowel('a'));
-        }
-
-        [Fact]
-        public void TestIsVowel_u()
-        {
-            Assert.True(extension.IsVowel('u'));
-        }
-
-        [Fact]
-        public void testTranslate_bemutatkozik()
-        {
-            Assert.Equal("bevemuvutavatkovozivik", extension.Translate("bemutatkozik"));
-        }
-
-        [Fact]
-        public void testTranslate_kolbice()
-        {
-            Assert.Equal("lavagovopuvus", extension.Translate("lagopus"));
+            Assert.IsType<Sharpie>(new Sharpie(a, b));
+            Assert.
         }
     }
 }
