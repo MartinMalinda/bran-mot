@@ -20,43 +20,35 @@ namespace GreenFox
             //
             // The diamond should have as many lines as the number was
 
-
             //Console.WriteLine("How big of a pyramid do you want to make?");
-            //int userNumber = int.Parse(Console.ReadLine());
-            int userNumber = 8;
+            //int height = int.Parse(Console.ReadLine());
+            int height = 8;
             string star = "*";
-            string blank = "-";
+            string blank = " ";
 
-            //render the first half of the diamond
-            for (int rows = 1; rows <= userNumber/2; rows++)
+            //render top half
+            for (int rows = 1; rows <= height/2 ; rows++)
             {
-                //render spaces
-                for (int spaces = 1; spaces <= userNumber/2-rows; spaces++)
+                //calculate spaces
+                for (int spaces = 1; spaces <= height/2 - rows; spaces++)
                 {
                     Console.Write(blank);
-
                 }
-
-                //2*i-1 - basically calculate the number of x's in RELATIONSHIP to i
-
-                for (int stars = 1; stars <= 2*rows-1; stars++)
+                for (int stars = 0; stars < 2*rows-1; stars++)
                 {
                     Console.Write(star);
                 }
                 Console.WriteLine();
             }
-            //render the second half of the diamond
-            for (int rows = 1; rows <= userNumber / 2; rows++)
+            //render bottom half
+            for (int bottomRows = 1; bottomRows <= height/2; bottomRows++)
             {
-                //render spaces
-                for (int spaces = 1; spaces <= rows-1; spaces++)
+                //calculate spaces
+                for (int bottomSpaces = 0; bottomSpaces < bottomRows-1; bottomSpaces++)
                 {
                     Console.Write(blank);
                 }
-
-                //2*i-1 - basically calculate the number of x's in RELATIONSHIP to i
-
-                for (int stars = userNumber - rows; stars > 0; stars--)
+                for (int bottomStars = 0; bottomStars < height-bottomRows-1; bottomStars++)
                 {
                     Console.Write(star);
                 }
@@ -66,3 +58,5 @@ namespace GreenFox
         }
     }
 }
+
+

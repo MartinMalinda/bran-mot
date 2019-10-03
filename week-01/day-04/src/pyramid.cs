@@ -16,26 +16,23 @@ namespace GreenFox
             // *******
             //
             // The pyramid should have as many lines as the number was
+
             Console.WriteLine("How big of a pyramid do you want to make?");
-            int userNumber = int.Parse(Console.ReadLine());
+            int height = int.Parse(Console.ReadLine());
             string star = "*";
-            string blank = "-";
+            string blank = " ";
 
-
-            for (int i = 0; i < userNumber; i++)
+            //render top half
+            for (int rows = 1; rows <= height ; rows++)
             {
-                //render spaces
-                for (int j = userNumber - i; j > 1; j--)
+                //calculate spaces
+                for (int spaces = 1; spaces <= height - rows; spaces++)
                 {
-                    Console.Write("-");
-
+                    Console.Write(blank);
                 }
-
-                //2*i-1 - basically calculate the number of x's in RELATIONSHIP to i
-
-                for (int k = 1; k <= i; k++)
+                for (int stars = 0; stars < 2*rows-1; stars++)
                 {
-                    Console.Write("*");
+                    Console.Write(star);
                 }
                 Console.WriteLine();
             }
