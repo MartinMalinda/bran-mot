@@ -1,9 +1,9 @@
 ﻿using System;
 namespace objectsAndClasses
 {
-    public class Person
+    public class EmptyClass
     {
-        public Person()
+        public EmptyClass()
         {
         }
     }

@@ -144,12 +144,6 @@ namespace objectsAndClasses
             } 
         }
 
-        public void AddCaptain(Pirate pirate)
-        {
-            
-            
-        }
-
         public void ShipStatus()
         {
             if(pirateShip.Count > 0)
