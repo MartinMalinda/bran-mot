@@ -1,27 +1,38 @@
 ﻿using System;
 
-namespace Doubling
+namespace GreenFox
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-            // - Create an integer variable named `baseNum` and assign the value `123` to it
-            // - Create a function called `Doubling` that doubles it's input parameter and returns with an integer
-            // - Print the result of `Doubling(baseNum)`
-
-            int baseNum = 123;
-
-            Console.WriteLine(Doubling(baseNum));
-            
-            Console.ReadLine();
-
-		}
-        public static int Doubling(int valueToDouble)
+    class Program
+    {
+        public static string Palindrome(string word)
         {
-            int doubledValue = valueToDouble * 2;
-            return doubledValue;
+            string palindrome = "";
+            char[] letters = word.ToCharArray();
+            char[] mirroredLetters = new char[word.Length];
+            for (int i = 0; i < letters.Length; i++)
+            {
+                mirroredLetters[i] = letters[i];
+            }
+            Array.Reverse(mirroredLetters);
+            foreach (var letter in letters )
+            {
+                palindrome = palindrome + letter;
+            }
+            foreach (var letter in mirroredLetters)
+            {
+                palindrome = palindrome + letter;
+            }
+            return palindrome;
         }
+        
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Palindrome("56788"));
+        }
+        //multiply the length by 2
+        //initialize the values with one for loop
+        //.length - i - 1
+        //should only use one for loop
 
     }
 }
