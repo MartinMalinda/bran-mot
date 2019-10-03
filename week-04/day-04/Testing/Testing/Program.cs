@@ -3,29 +3,17 @@ using System.Collections.Generic;
 
 namespace Testing
 {
-    public class CountLetters
+    public class Fibonacci
     {
-        public static Dictionary<char, int> LetterCount (string stringToParse)
+        public static int GetFibonacciValue(int n)
         {
-            Dictionary<char, int> letterCount = new Dictionary<char, int>();
-
-            char[] charactersInString = stringToParse.ToCharArray();
-
-            foreach (var character in charactersInString)
+            if (n <= 1)
             {
-                if (letterCount.ContainsKey(character))
-                {
-                    letterCount[character]+= 1;
-                }
-                else
-                {
-                    letterCount.Add(character, 1);
-                }
+                return n;
             }
-            return letterCount;
+            return GetFibonacciValue(n - 2) + GetFibonacciValue(n - 1);
         }
     }
-
     class Program
     {
         static void Main(string[] args)

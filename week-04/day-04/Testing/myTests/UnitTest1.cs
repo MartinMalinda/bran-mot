@@ -7,12 +7,13 @@ namespace myTests
 {
     public class UnitTest1
     {
+        //0, 1, 1, 2, 3, 5, 8, 13, 21 
         [Theory]
-        [InlineData ("hello")]
-        [InlineData("this is dog")]
-        public void Test1(string testString)
+        [InlineData (5)]
+        [InlineData(8)]
+        public void Test1(int testInt)
         {
-            Assert.IsType<Dictionary<char,int>>(CountLetters.LetterCount(testString));
+            Assert.Equal(5, Fibonacci.GetFibonacciValue(testInt));
         }
     }
 }
