@@ -8,35 +8,26 @@ namespace trialExam
     {
         static void Main(string[] args)
         {
-            Pirate Jack = new Pirate("Jack");
-            Pirate Jill = new Pirate("Jill", true, true);
-            Pirate John = new Pirate("John", false, true);
-
-            Jack.Work();
-            Jill.Work();
-            John.Work();
-
-            Jack.Party();
-            Jill.Party();
-            John.Party();
-
-            Console.WriteLine(Jack.ToString());
-            Console.WriteLine(Jill.ToString());
-            Console.WriteLine(John.ToString());
-
-            PirateShip myShip = new PirateShip();
-
-            myShip.AddPirate(Jill);
-            myShip.AddPirate(Jack);
-            myShip.AddPirate(John);
+            int[,] myArray = {  { 1, 0, 1, 7 },
+                                { 0, 2, 2, 4},
+                                { 1, 2, 5 ,2 },
+                                { 7, 1, 2, 5 } };
+            
 
 
-            Console.WriteLine(myShip.GetPoorPirates());
-            Console.WriteLine(myShip.GetGolds());
-
-            //myShip.LastDayOnTheShip();
-
-            myShip.PrepareForBattle();
+            for (int i = 0; i< myArray.Rank ; i++)
+            {
+                for (int j = myArray.Rank; j > 0; j--)
+                {
+                    if (myArray[i, j] != myArray[j,i])
+                    {
+                        Console.WriteLine("The array is not symmetrical");
+                        break;
+                    }
+                }
+                
+            }
+            Console.WriteLine( ("This array is symmetrical"));
 
         }
     }

@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace AbstractsAndInterfaces
 {
-    public class Fleet
+    public class Fleet 
     {
         private List<Thing> things;
 
