@@ -3,30 +3,26 @@ using System.Collections.Generic;
 
 namespace Testing
 {
-    //Write a function, that takes two strings and returns a boolean value based on if the two strings are Anagramms or not.
-    public class AnagramChecker
+    public class CountLetters
     {
-        public AnagramChecker() { }
-
-        public bool Anagram(string string1, string string2)
+        public static Dictionary<char, int> LetterCount (string stringToParse)
         {
-            char[] chars1 = string1.ToCharArray();
-            char[] chars2 = string2.ToCharArray();
-            Array.Sort(chars1);
-            Array.Sort(chars2);
+            Dictionary<char, int> letterCount = new Dictionary<char, int>();
 
-            if (chars1.Length != chars2.Length)
+            char[] charactersInString = stringToParse.ToCharArray();
+
+            foreach (var character in charactersInString)
             {
-                return false;
-            }
-            for (int i = 0; i < chars1.Length; i++)
-            {
-                if (chars1[i] != chars2[i])
+                if (letterCount.ContainsKey(character))
                 {
-                    return false;
+                    letterCount[character]+= 1;
+                }
+                else
+                {
+                    letterCount.Add(character, 1);
                 }
             }
-            return true;
+            return letterCount;
         }
     }
 
@@ -34,11 +30,6 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            //char[] charsOne = { 'd', 'o', 'g' };
-            //char[] charsTwo = { 'g', 'o', 'd' };
-            //Array.Sort(charsTwo);
-            //Array.Sort(charsOne);
-
 
         }
     }
