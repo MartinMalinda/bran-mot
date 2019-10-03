@@ -30,7 +30,6 @@ namespace myTests
         public void TestSharpieCreation(string a, int b)
         {
             Assert.IsType<Sharpie>(new Sharpie(a, b));
-            Assert.
         }
     }
 }
