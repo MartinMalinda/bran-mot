@@ -9,6 +9,7 @@ namespace myTests
     {
         [Theory]
         [InlineData ("hello")]
+        [InlineData("this is dog")]
         public void Test1(string testString)
         {
             Assert.IsType<Dictionary<char,int>>(CountLetters.LetterCount(testString));
