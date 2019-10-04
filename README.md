@@ -6,7 +6,8 @@
 
 #### Contents
 * Todo App
-  *[Git Repo](https://github.com/bran-mot/todo-app)
+  * [Git Repo](https://github.com/bran-mot/todo-app)
+
 * Week 0
   * [My First Website](https://github.com/green-fox-academy/bran-mot/tree/master/week-00/myFirstWebsite)
 * Week 1
