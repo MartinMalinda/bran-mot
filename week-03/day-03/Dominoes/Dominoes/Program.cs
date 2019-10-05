@@ -21,23 +21,21 @@ namespace Dominoes
         {
             List<Domino> sortedDominoes = new List<Domino>();
             sortedDominoes.Add(dominoSet[0]);
-            int valA = 0;
-            int valB = 0;
            
-            for (int i = 0; i < dominoSet.Count; i++)
+            for (int i = 0; i < dominoSet.Count-1; i++)
             {
                 int valueToMatch = sortedDominoes[i].GetValues()[1];
 
-                for (int j = 1; j < dominoSet.Count; j++)
+                foreach (var domino in dominoSet)
                 {
-                    if (dominoSet[j].GetValues()[0] == valueToMatch)
+                    if (domino.GetValues()[0] == valueToMatch)
                     {
-                        valA = dominoSet[j].GetValues()[0];
-                        valB = dominoSet[j].GetValues()[1];
+                        int valA = domino.GetValues()[0];
+                        int valB = domino.GetValues()[1];
 
                         sortedDominoes.Add(new Domino(valA, valB));
                     }
-                }  
+                }
             }
             foreach (var domino in sortedDominoes)
             {
