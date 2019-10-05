@@ -1,6 +1,6 @@
 using System;
 
-namespace GreenFox
+namespace ExpressionsAndControlFlow
 {
     class Program
     {
@@ -17,28 +17,22 @@ namespace GreenFox
             //
             // The pyramid should have as many lines as the number was
 
-            Console.WriteLine("How big of a pyramid do you want to make?");
-            int height = int.Parse(Console.ReadLine());
-            string star = "*";
-            string blank = " ";
+            Console.WriteLine("How tall of a pyramid do you want to create?");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-            //render top half
-            for (int rows = 1; rows <= height ; rows++)
+            for (int rows = 1; rows <= num; rows++)
             {
-                //calculate spaces
-                for (int spaces = 1; spaces <= height - rows; spaces++)
+                for (int spaces = num-rows; spaces > 0; spaces--)
                 {
-                    Console.Write(blank);
+                    Console.Write(" ");
                 }
-                for (int stars = 0; stars < 2*rows-1; stars++)
+                for (int stars = 0; stars < (rows*2)-1; stars++)
                 {
-                    Console.Write(star);
+                    Console.Write("*");
                 }
                 Console.WriteLine();
             }
-
         }
     }
 }
-
-
