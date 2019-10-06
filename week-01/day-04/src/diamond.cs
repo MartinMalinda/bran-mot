@@ -10,54 +10,72 @@ namespace ExpressionsAndControlFlow
             // diamond like this:
             //
             //
-            //    *
-            //   ***
-            //  *****
-            // *******
-            //  ***** 
-            //   ***  
-            //    *
-            //
-            // The diamond should have as many lines as the number was
+            // 1 ---*
+            // 2 --***
+            // 3 -*****
+            // 4 *******
+            // 5 -***** 
+            // 6 --***  
+            // 7 ---*
 
-
-            //Console.WriteLine("How tall of a pyramid do you want to create?");
-            //int num = int.Parse(Console.ReadLine());
-            int num = 7;
+            Console.WriteLine("How tall of a pyramid do you want to create?");
+            int num = int.Parse(Console.ReadLine());
             Console.WriteLine();
-            int halfwayPoint = 0;
-            if (num%2 == 0)
+
+            int halfwayPoint = num/2;
+            if (num % 2 != 0)
             {
-                halfwayPoint = (num / 2);
+                for (int rows = 1; rows <= halfwayPoint; rows++)
+                {
+                    for (int spaces = halfwayPoint - rows+1; spaces > 0; spaces--)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int stars = 0; stars < (rows * 2) - 1; stars++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
+                for (int rows = 0; rows <= halfwayPoint+1; rows++)
+                {
+                    for (int spaces = rows; spaces > 0; spaces--)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int stars = 0; stars < num - (2 * rows); stars++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
             }
             else
             {
-                halfwayPoint = (num / 2) + 1;
-            }
-
-            for (int rows = 1; rows <= halfwayPoint; rows++)
-            {
-                for (int spaces = halfwayPoint-rows; spaces > 0; spaces--)
+                for (int rows = 1; rows <= halfwayPoint; rows++)
                 {
-                    Console.Write(" ");
+                    for (int spaces = halfwayPoint - rows; spaces > 0; spaces--)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int stars = 0; stars < (rows * 2) - 1; stars++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                for (int stars = 0; stars < (rows*2)-1; stars++)
+                for (int rows = 0; rows <= halfwayPoint; rows++)
                 {
-                    Console.Write("*");
+                    for (int spaces = rows; spaces > 0; spaces--)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int stars = 1; stars < num - (2 * rows); stars++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
-            }
-            for (int rows = 1; rows <= halfwayPoint; rows++)
-            {
-                for (int spaces = rows ; spaces > 0 ; spaces--)
-                {
-                    Console.Write(" ");
-                }
-                for (int stars = 0; stars < num-(2*rows); stars++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
             }
         }
     }
