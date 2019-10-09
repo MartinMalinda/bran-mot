@@ -26,27 +26,41 @@ namespace oldExercises
             Console.WriteLine("Please Provide a maximum limit for the range of numbers: ");
             int upperLimit = int.Parse(Console.ReadLine());
             int userGuess = 0;
+            int lives = 5;
+            bool userWins = false;
 
-            
             int numberToGuess = randomNumber.Next(1, upperLimit);
 
             Console.WriteLine("Guess a number between 1 and {0}", upperLimit);
 
-            for (int lives = 5; lives > 0; lives--)
+            while (lives > 0)
             {
-                if(userGuess == numberToGuess)
+                if (userGuess == numberToGuess)
                 {
-                    Console.WriteLine("You win!");
-                } else if (userGuess > numberToGuess)
+                    userWins = true;
+                    break;
+                }
+                else if (userGuess > numberToGuess)
                 {
-                    Console.WriteLine("Too high. Guess Again.");
-                }else if (userGuess < numberToGuess && userGuess > 0)
+                    lives--;
+                    Console.WriteLine($"Too high. Guess Again. You have {lives} lives left.");
+                }
+                else if (userGuess < numberToGuess && userGuess > 0)
                 {
-                    Console.WriteLine("Too Low. Guess Again");
+                    lives--;
+                    Console.WriteLine($"Too Low. Guess Again. You have {lives} lives left.");
                 }
                 userGuess = int.Parse(Console.ReadLine());
             }
-            Console.WriteLine("Youre dead. Game Over.");
+
+            if (userWins)
+            {
+                Console.WriteLine("You win!");
+            }
+            else
+            {
+                Console.WriteLine("You Lose!");
+            }
         }
     }
 }
