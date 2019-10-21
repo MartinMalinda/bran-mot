@@ -7,12 +7,12 @@ namespace Linq
     {
         static void Main(string[] args)
         {
-            //Write a LINQ Expression to get the squared value of the positive numbers from the following array:
+            //Write a LINQ Expression to find which number squared value is more then 20 from the following array:
 
-            int[] n = { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
+            int[] n = { 3, 9, 2, 8, 6, 5 };
 
-            var squaredNumbers = n.Where(number => number > 0).Select(number => number * number).ToList();
-            squaredNumbers.ForEach(Console.WriteLine);
+            var squareLargerThanTwenty = n.Where(number => number * number > 20).ToList();
+            squareLargerThanTwenty.ForEach(Console.WriteLine);
         }
     }
 }
