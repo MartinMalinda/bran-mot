@@ -7,12 +7,13 @@ namespace Linq
     {
         static void Main(string[] args)
         {
-            //Write a LINQ Expression to find the frequency of characters in a given string.
+            //Write a LINQ Expression to find the uppercase characters in a string.
 
-            string myString = "puppies eat a lot of spaghetti";
+            string myString = "I like TO uSe uPpER and LoWeRCASe";
 
-            var characterCount = myString.ToCharArray().GroupBy(character => character).ToList();
-            characterCount.ForEach(character => Console.WriteLine(character.Key + ": " + character.Count()));
+            var upperCaseLetters = myString.ToCharArray().Where(character => Char.IsUpper(character)).ToList();
+            upperCaseLetters.ForEach(Console.WriteLine);
+
         }
     }
 }
