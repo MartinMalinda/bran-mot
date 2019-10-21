@@ -7,12 +7,12 @@ namespace Linq
     {
         static void Main(string[] args)
         {
-            //Write a LINQ Expression to get the average value of the odd numbers from the following array:
+            //Write a LINQ Expression to get the squared value of the positive numbers from the following array:
 
             int[] n = { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
 
-            var oddNumbers = n.Where(number => number % 2 != 0);
-            oddNumbers.ToList().ForEach(Console.WriteLine);
+            var squaredNumbers = n.Where(number => number > 0).Select(number => number * number).ToList();
+            squaredNumbers.ForEach(Console.WriteLine);
         }
     }
 }
