@@ -7,12 +7,12 @@ namespace Linq
     {
         static void Main(string[] args)
         {
-            //Write a LINQ Expression to find which number squared value is more then 20 from the following array:
+            //Write a LINQ Expression to find the frequency of characters in a given string.
 
-            int[] n = { 3, 9, 2, 8, 6, 5 };
+            string myString = "puppies eat a lot of spaghetti";
 
-            var squareLargerThanTwenty = n.Where(number => number * number > 20).ToList();
-            squareLargerThanTwenty.ForEach(Console.WriteLine);
+            var characterCount = myString.ToCharArray().GroupBy(character => character).ToList();
+            characterCount.ForEach(character => Console.WriteLine(character.Key + ": " + character.Count()));
         }
     }
 }
