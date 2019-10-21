@@ -7,13 +7,12 @@ namespace Linq
     {
         static void Main(string[] args)
         {
-            //Write a LINQ Expression to find the uppercase characters in a string.
+            //Write a LINQ Expression to convert a char array to a string.
 
-            string myString = "I like TO uSe uPpER and LoWeRCASe";
+            char[] myCharacters = { 'a', 'l', 'l', 'i', 'u', 'm' };
 
-            var upperCaseLetters = myString.ToCharArray().Where(character => Char.IsUpper(character)).ToList();
-            upperCaseLetters.ForEach(Console.WriteLine);
-
+            var myString = String.Join("", myCharacters.Select(character => character));
+            Console.WriteLine(myString);
         }
     }
 }
