@@ -1,0 +1,42 @@
+﻿html{
+    font-size: 16px;
+}
+body {
+    font-family: 'Rubik', sans-serif;  
+}
+h1{
+    font-size: 2rem;
+}
+section.fitlers ul{
+    padding-left: 0;
+}
+
+section.filters ul li{
+    display: inline;
+    padding:10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #205B6D;
+    color: #ffffff;
+}
+section.filters{
+    margin-bottom: 20px;
+}
+
+table{
+    width: 100%;
+}
+
+thead tr{
+    background-color: #cccccc;
+}
+td, th{
+    padding: 5px;
+    text-align: left;
+}
+th:nth-child(3), th:nth-child(4), td:nth-child(3), td:nth-child(4){
+    text-align:right;
+}
+tr:nth-child(2n){
+    background-color: #ececec;
+}
