@@ -15,6 +15,7 @@ body{
     width: 80%;
     box-shadow: 0 10px 10px 0 #cccccc;
     align-items: center;
+    max-width: 600px;
 }
 form{
     flex-grow: 1;
