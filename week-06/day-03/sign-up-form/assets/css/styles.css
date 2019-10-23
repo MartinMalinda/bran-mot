@@ -1,0 +1,99 @@
+body{
+    display:flex;
+    flex-direction: row;
+    background-color: #ececec;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 10px 10px 0 #cccccc;
+    align-items: center;
+}
+form{
+    flex-grow: 1;
+}
+.signIn{
+    flex-grow: 1;
+}
+fieldset{
+    border: none;
+    padding: 0;
+}
+
+legend{
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+input{
+    display: block;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 5px;
+}
+input:focus{
+    outline: none;
+    border-bottom: 2px solid #34a853;
+}
+
+input:valid{
+    background-image:url(../img/checked.svg);
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95%;
+}
+
+button{
+    background-color: #34a853;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+.orDivider{
+    flex-shrink: 1;
+    margin: 0 20px;
+    padding: 12px 10px;
+    background-color: #ececec;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 0 #cccccc;
+    font-size: .75em;
+    font-weight: bold;
+}
+.signIn ul{
+    list-style: none;
+    padding: 0;
+}
+.signIn ul li{
+    margin-bottom: 20px;
+}
+.signIn ul li a{
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.signIn ul li:last-child{
+    margin-bottom: 0;
+}
+.fb{
+    background-color: #3b5998;
+}
+.twitter{
+    background-color: #1da1f2;
+}
+.google{
+    background-color: #dd4b39;
+}
