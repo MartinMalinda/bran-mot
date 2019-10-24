@@ -68,5 +68,23 @@ namespace Webshop.Models
         {
             return items.Where(n => n.Description.ToLower().Contains(query.ToLower()) || n.Name.ToLower().Contains(query.ToLower())).ToList();
         }
+
+        public static List<Item>filterByPrice (string bounds, double amount)
+        {
+            var priceFiltered = new List<Item>();
+            switch (bounds)
+            {
+                case "above":
+                    priceFiltered = StockList.Inventory.Where(n => n.Price > amount).ToList();
+                    break;
+                case "below":
+                    priceFiltered = StockList.Inventory.Where(n => n.Price < amount).ToList();
+                    break;
+                default:
+                    priceFiltered = StockList.Inventory.Where(n => n.Price == amount).ToList();
+                    break;
+            }
+            return priceFiltered;
+        }
     }
 }

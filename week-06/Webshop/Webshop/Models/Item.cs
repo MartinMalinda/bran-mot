@@ -16,5 +16,10 @@ namespace Webshop.Models
             Price = price;
             QtyInStock = qty;
         }
+
+        public double CurrencyConvert(double exchangeRate)
+        {
+            return Price * exchangeRate;
+        }
     }
 }

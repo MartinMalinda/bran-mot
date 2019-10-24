@@ -44,6 +44,15 @@ button {
     color: #205B6D;
 }
 
+.filters a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.filters a:hover {
+    text-decoration: underline;
+}
+
 .filters ul{
     padding-left: 0 !important;
     margin: 0;
@@ -83,6 +92,30 @@ button {
 }
 .filters #moreFilters{
     justify-self: flex-end;
+}
+
+.filterByPrice form{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    align-items: baseline;
+}
+
+.filterByPrice form input{
+    margin-left: 20px;
+}
+
+.filterByPrice form input[type=number]{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #999999;
+    margin-right: 0;
+    flex-grow: 1;
+}
+
+.filterByPrice form button{
+    background-color: #205B6D;
+    color:#ffffff;
 }
 
 main {

@@ -60,5 +60,29 @@ namespace Webshop.Controllers
         {
             return View(StockList.GetSearch(StockList.Inventory, search));
         }
+
+        [HttpGet("more-filters")]
+        public IActionResult moreFilters()
+        {
+            return View(StockList.Inventory);
+        }
+
+        [HttpGet("price-in-eur")]
+        public IActionResult priceInEuros()
+        {
+            return View(StockList.Inventory);
+        }
+
+        [HttpGet("original-currency")]
+        public IActionResult originalCurrency()
+        {
+            return View(StockList.Inventory);
+        }
+
+        [HttpPost("filter-by-price")]
+        public IActionResult filterByPrice(string byPrice, double number)
+        {
+            return View(StockList.filterByPrice(byPrice, number));
+        }
     }
 }

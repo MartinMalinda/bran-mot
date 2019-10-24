@@ -1,0 +1,20 @@
+﻿<section class="filters">
+    <h4>Filter: </h4>
+    <ul>
+        <li><a href="~/webshop/only-available/">Clothes and Shoes</a></li>
+        <li><a href="~/webshop/cheapest-first/">Electronics</a></li>
+        <li><a href="~/webshop/contains-nike/">Beverages and Snacks</a></li>
+        <li><a href="~/webshop/price-in-eur/">Euro</a></li>
+        <li><a href="~/webshop/original-currency/">Original Currency</a></li>
+    </ul>
+     <a id="previousFilters" href="~/webshop/">< Previous Filters</a>
+</section>
+<section class="filterByPrice">
+    <form action="~/webshop/filter-by-price" method="post">
+        <input type="radio" name="byPrice" value="above" checked />Above<br />
+        <input type="radio" name="byPrice" value="below" />Below<br />
+        <input type="radio" name="byPrice" value="exactly" />Exactly<br />
+        <input type="number" name="number" placeholder="100" />
+        <button type="submit">Filter</button>
+    </form>
+</section>
