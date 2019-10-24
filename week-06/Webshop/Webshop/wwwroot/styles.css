@@ -2,29 +2,100 @@
     font-size: 16px;
 }
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Rubik', sans-serif;  
 }
 h1{
     font-size: 2rem;
 }
-section.fitlers ul{
-    padding-left: 0;
-}
 
-section.filters ul li{
-    display: inline;
-    padding:10px 20px;
-    margin: 0 5px;
-    border: none;
+header {
     background-color: #205B6D;
     color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-section.filters{
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+header form {
+    justify-self: flex-end;
+}
+
+input {
+    background-color: #12323C;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    background-color: #ffffff; 
+    color: #205B6D;
+}
+
+.filters ul{
+    padding-left: 0 !important;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.filters ul li{
+    display: inline;
+    margin: 0 5px;
+    border: none;
+}
+
+.filters ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    padding:5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    font-size: .75em;
+}
+.filters ul li a:hover{
+    background-color: #487887;
+}
+
+.filters{
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
     margin-bottom: 20px;
+    background-color: #205B6D;
+    padding: 0 20px 20px 20px;
+}
+
+.filters h4 {
+    color: #ffffff;
+    margin: 0 10px 0 0;
+}
+.filters #moreFilters{
+    justify-self: flex-end;
+}
+
+main {
+    padding: 20px;
 }
 
 table{
     width: 100%;
+}
+
+tr td, tr th{
+    padding: 10px 5px;
+
 }
 
 thead tr{

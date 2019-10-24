@@ -1,13 +1,27 @@
 ﻿<header>
-    <h1>My Shop</h1>
+    <h1><a href="~/webshop/">My Shop</a></h1>
+    <form action="~/webshop/search/" method="post">
+        <label for="search">
+            Search For:
+        </label>
+        <br />
+        <input id="search" type="search" name="search" placeholder="Nike, HP, etc..." />
+        <button type="submit">
+            Search
+        </button>
+    </form>
 </header>
-<hr />
 <section class="filters">
+    <h4>Filter: </h4>
     <ul>
         <li><a href="~/webshop/only-available/">Only Available</a></li>
         <li><a href="~/webshop/cheapest-first/">Cheapest First</a></li>
         <li><a href="~/webshop/contains-nike/">Contains "Nike"</a></li>
-        <li><a>Average Stock</a></li>
-        <li><a>Most Expensive Available</a></li>
+        <li><a href="~/webshop/average-stock/">Average Stock</a></li>
+        <li><a href="~/webshop/most-expensive/">Most Expensive Available</a></li>
     </ul>
+    <a id="moreFilters" href=#>More Filters ></a>
+</section>
+<section class="search">
+    
 </section>

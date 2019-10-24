@@ -6,7 +6,14 @@ namespace Webshop.Models
 {
     public class StockList
     {
-        public static List<Item> Inventory { get; private set; }
+        public static List<Item> Inventory { get; private set; } = new List<Item>
+        {
+            new Item("Running Shoes", "Nike running shoes for every day sport", 1000.00, 5),
+            new Item("Printer", "Some HP printer that will print pages", 3000.00, 2),
+            new Item("Coca Cola", "0.5l standard coke", 25.9, 0),
+            new Item("Wokin", "Chicken with friend rice and WOKIN sauce", 119.0, 100),
+            new Item("T-shirt", "Blue iwth a corgi on a bike", 300.0, 1),
+        };
 
         public StockList()
         {
@@ -55,6 +62,11 @@ namespace Webshop.Models
         public static string GetMostExpensive(List<Item> items)
         {
              return items.OrderByDescending(n => n.Price).First().Name;
+        }
+
+        public static List<Item> GetSearch(List<Item> items, string query)
+        {
+            return items.Where(n => n.Description.ToLower().Contains(query.ToLower()) || n.Name.ToLower().Contains(query.ToLower())).ToList();
         }
     }
 }

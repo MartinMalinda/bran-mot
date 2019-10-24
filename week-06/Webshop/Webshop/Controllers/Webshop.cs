@@ -16,43 +16,49 @@ namespace Webshop.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(StockList.GetExampleList());
+            return View(StockList.Inventory);
         }
 
         [HttpGet("only-available")]
         // GET: /<controller>/
         public IActionResult OnlyAvailable()
         {
-            return View(StockList.GetOnlyAvailable(StockList.GetExampleList()));
+            return View(StockList.GetOnlyAvailable(StockList.Inventory));
         }
 
         [HttpGet("cheapest-first")]
         // GET: /<controller>/
         public IActionResult CheapestFirst()
         {
-            return View(StockList.GetCheapestFirst(StockList.GetExampleList()));
+            return View(StockList.GetCheapestFirst(StockList.Inventory));
         }
 
         [HttpGet("contains-nike")]
         // GET: /<controller>/
         public IActionResult containsNike()
         {
-            return View(StockList.GetNike(StockList.GetExampleList()));
+            return View(StockList.GetNike(StockList.Inventory));
         }
 
         [HttpGet("average-stock")]
         // GET: /<controller>/
         public IActionResult averageStock()
         {
-            ViewData["average"] = StockList.GetAverageStock(StockList.GetExampleList());
+            ViewData["average"] = StockList.GetAverageStock(StockList.Inventory);
             return View();
         }
 
         [HttpGet("most-expensive")]
         public IActionResult mostExpensive()
         {
-            ViewData["most-expensive"] = StockList.GetMostExpensive(StockList.GetExampleList());
+            ViewData["most-expensive"] = StockList.GetMostExpensive(StockList.Inventory);
             return View(); 
+        }
+
+        [HttpPost("search")]
+        public IActionResult Search(string search)
+        {
+            return View(StockList.GetSearch(StockList.Inventory, search));
         }
     }
 }
