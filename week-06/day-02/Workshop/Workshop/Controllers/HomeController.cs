@@ -15,7 +15,7 @@ namespace Workshop.Controllers
         {
             return "Hello from the Controller!";
         }
-        // GET: /<controller>/
+        //GET: /<controller>/
         //public IActionResult Index()
         //{
         //    return View();

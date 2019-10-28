@@ -12,12 +12,13 @@ namespace Workshop.Controllers
         {
             var greeting = new Greeting()
             {
-                ID = 1,
+                ID = Controllers.RestController.CallCount,
                 Content = "from the model"
             };
 
             ViewData["Name"] = name;
             ViewData["Hello"] = greeting.ChooseLanguage();
+            ViewData["count"] = greeting.ID;
 
             return View(greeting);
         }
