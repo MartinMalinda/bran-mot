@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <h1>Bank Accounts</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Balance</th>
+                    <th>Animal Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@ViewBag.Item.Name</td>
+                    <td>@ViewBag.Item.Balance.ToString("C2") &#129427;</td>
+                    <td>@ViewBag.Item.AnimalType</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+</body>
+</html>
