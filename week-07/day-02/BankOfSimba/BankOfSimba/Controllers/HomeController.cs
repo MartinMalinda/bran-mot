@@ -15,10 +15,10 @@ namespace BankOfSimba.Controllers
 
         public static List<BankAccount> AllAccounts { get; set; } = new List<BankAccount>
         {
-            new BankAccount("Timon", 50000.00, "Meerkat", true),
+            new BankAccount("Timon", 50000.00, "Meerkat", "on"),
             new BankAccount("Poomba", 0.01, "Warthog"),
             new BankAccount("Ariel", 5.03, "Mermaid"),
-            new BankAccount("Mulan", 25.43, "Human", false, true)
+            new BankAccount("Mulan", 25.43, "Human", "on", "on")
         };
 
         // GET: /<controller>/
@@ -27,8 +27,7 @@ namespace BankOfSimba.Controllers
             return View();
         }
 
-        [Route("show")]
-        [HttpGet("")]
+        [HttpGet("show")]
         public IActionResult ShowSimba()
         {
             var simba = new BankAccount("Simba", 2000, "lion");
@@ -48,14 +47,14 @@ namespace BankOfSimba.Controllers
             return View(AllAccounts);
         }
         [HttpPost("all-accounts")]
-        public IActionResult allAccounts(string name, double balance, string species, bool king, bool goodGuy)
+        public IActionResult allAccounts(string name, double balance, string species, string king, string goodGuy)
         {
             AllAccounts.Add(new BankAccount(name, balance, species, king, goodGuy));
             return View(AllAccounts);
         }
 
-        [HttpPost("all-accounts")]
-        public IActionResult allAccounts(bool increase)
+        [HttpPost("increase-accounts")]
+        public IActionResult increaseAccounts(bool increase)
         {
             foreach (var account in AllAccounts)
             {
@@ -68,7 +67,7 @@ namespace BankOfSimba.Controllers
                     account.Balance += 10;
                 }
             }
-            return View(AllAccounts);
+            return RedirectToAction("allAccounts");
         }
 
     }

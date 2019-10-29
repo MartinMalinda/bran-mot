@@ -16,27 +16,27 @@ namespace BankOfSimba.Models
             AnimalType = animalType;
         }
 
-        public BankAccount(string name, double balance, string animalType, bool isKing)
+        public BankAccount(string name, double balance, string animalType, string isKing)
         {
             Name = name;
             Balance = balance;
             AnimalType = animalType;
-            if (isKing)
+            if (isKing == "on")
             {
                 IsKing = true;
             }
         }
 
-        public BankAccount(string name, double balance, string animalType, bool isKing, bool isEvil)
+        public BankAccount(string name, double balance, string animalType, string isKing, string isGood)
         {
             Name = name;
             Balance = balance;
             AnimalType = animalType;
-            if (isKing)
+            if (isKing == "on")
             {
                 IsKing = true;
             }
-            if (isEvil)
+            if (isGood != "on")
             {
                 IsGoodGuy = false;
             }
