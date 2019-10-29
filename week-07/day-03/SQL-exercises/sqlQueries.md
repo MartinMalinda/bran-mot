@@ -33,3 +33,21 @@ Write a query to return the ratings data in a more readable format: reviewer nam
     INNER JOIN Movie on Rating.mID = Movie.mID)
     INNER JOIN Reviewer on Rating.rID = Reviewer.rID)
     ORDER BY Reviewer.name, Movie.title, Rating.stars;
+
+# Extras
+
+## Q1
+Find the names of all reviewers who rated Gone with the Wind. 
+
+    SELECT DISTINCT Reviewer.name FROM ((Rating
+    INNER JOIN Movie on Rating.mID = Movie.mID)
+    INNER JOIN Reviewer on Rating.rID = Reviewer.rID)
+    WHERE Movie.title = "Gone with the Wind";
+
+## Q2
+For any rating where the reviewer is the same as the director of the movie, return the reviewer name, movie title, and number of stars. 
+
+    SELECT Reviewer.name, Movie.title, Rating.stars FROM(( 
+    Rating INNER JOIN Movie ON Rating.mID = Movie.mID)
+    INNER JOIN Reviewer ON Rating.rID = Reviewer.rID)
+    WHERE Movie.director = Reviewer.name;
