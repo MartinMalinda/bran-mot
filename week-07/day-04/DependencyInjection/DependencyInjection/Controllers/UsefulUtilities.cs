@@ -34,7 +34,29 @@ namespace DependencyInjection.Controllers
         [HttpGet("email")]
         public IActionResult Email(string email)
         {
+            if (utilities.CheckEmail(email))
+            {
+                ViewData["valid-email"] = email + " is a valid email address";
+            }
+            else
+            {
+                ViewData["invalid-email"] = email + " is not a valid email address";
+            }
+            return View();
+        }
 
+        [HttpGet("caesar-encode")]
+        public IActionResult CaesarEncode(string text, int number)
+        {
+            ViewData["encoded"] = utilities.Caesar(text, number);
+            return View();
+        }
+
+        [HttpGet("caesar-decode")]
+        public IActionResult CaesarDecode(string text, int number)
+        {
+            int negative = -Math.Abs(number);
+            ViewData["decoded"] = utilities.Caesar(text, negative);
             return View();
         }
     }
