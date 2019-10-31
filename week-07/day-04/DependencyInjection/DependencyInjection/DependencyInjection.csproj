@@ -13,6 +13,7 @@
     <Folder Include="Views\UsefulUtilities\" />
     <Folder Include="Services\" />
     <Folder Include="Views\GreenFoxClassApp\" />
+    <Folder Include="Views\GreenFox_IF\" />
   </ItemGroup>
 
   <ItemGroup>
