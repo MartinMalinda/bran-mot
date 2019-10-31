@@ -19,6 +19,7 @@ namespace DependencyInjection
             services.AddTransient<Printer>();
             services.AddTransient<IColor, BlueColor>();
             services.AddTransient<UtilityService>();
+            services.AddSingleton<StudentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
