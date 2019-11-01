@@ -19,6 +19,7 @@ namespace day_05
         {
             services.AddMvc();
             services.AddSingleton<IFox, FoxService>();
+            services.AddSingleton<IFood, FoodService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -22,14 +22,15 @@ namespace day05.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            return View(FoxService.GetCurrentFox());
+            
         }
 
-        [HttpGet("")]
-        public IActionResult Index(string name)
-        {
-            return View(FoxService.GetCurrentFox());
-        }
+        //[HttpGet("")]
+        //public IActionResult Index(string name)
+        //{
+        //    return View();
+        //}
 
         [HttpGet("login")]
         public IActionResult Login()
@@ -40,9 +41,11 @@ namespace day05.Controllers
         [HttpPost("login")]
         public IActionResult Login(string name)
         {
+            
             FoxService.AddFox(name);
             FoxService.ChangeFox(name);
             return RedirectToAction("Index", "Home", new { name = FoxService.GetCurrentFox().Name});
         }
+
     }
 }

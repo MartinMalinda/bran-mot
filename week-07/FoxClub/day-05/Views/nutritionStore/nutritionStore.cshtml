@@ -1,0 +1,31 @@
+﻿@model day05.Models.Fox
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    @Html.Partial("_navbar", Model.Name)
+    <form>
+        <label for="food">Food</label>
+        <select id="food" name="food">
+            <option>Pizza</option>
+            <option>Donuts</option>
+            <option>Cheesecake</option>
+        </select>
+        <label for="drink">Drink</label>
+        <select id="drink" name="drink">
+            <option>Lemonade</option>
+            <option>Coca Cola</option>
+            <option>Alcohol</option>
+            <option>Piss</option>
+        </select>
+        <button type="submit">Change</button>
+    </form>
+</body>
+</html>
