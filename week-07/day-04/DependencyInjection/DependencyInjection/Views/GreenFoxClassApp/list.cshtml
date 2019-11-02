@@ -1,0 +1,17 @@
+﻿@model  List<string>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+   <ul>
+       @foreach (var student in @Model)
+       {
+            <li>@student</li>
+       }
+   </ul>
+</body>
+</html>

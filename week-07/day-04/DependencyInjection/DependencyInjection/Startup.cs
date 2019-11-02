@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DependencyInjection.Interfaces;
+using DependencyInjection.Models;
+using DependencyInjection.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BankOfSimba
+namespace DependencyInjection
 {
     public class Startup
     {
@@ -12,6 +15,12 @@ namespace BankOfSimba
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<ConsoleLoggerMiddleware>();
+            services.AddTransient<Printer>();
+            services.AddTransient<IColor, BlueColor>();
+            services.AddTransient<UtilityService>();
+            services.AddSingleton<StudentService>();
+            services.AddSingleton<IStudentService, StudentService_IF>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -21,10 +30,8 @@ namespace BankOfSimba
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseStaticFiles();
             app.UseMvc();
-
+            app.UseMiddleware<ConsoleLoggerMiddleware>();
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");

@@ -1,0 +1,48 @@
+﻿@model day05.Models.Fox
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    @Html.Partial("_navbar", Model.Name)
+    <main>
+        <img src="~/img/greenfox.png" />
+
+        <p>This is @Model.Name</p>
+        <p>He currently lives on</p>
+        <ul>
+            @foreach (var food in Model.Foods)
+            {
+                <li>@food</li>
+            }
+        </ul>
+        <p>He knows @Model.Tricks.Count() tricks.</p>
+        <section class="tricks">
+            <h2>Known Tricks</h2>
+            
+                @{
+                    if (Model.Tricks.Count() > 0)
+                    {
+                        <ul>
+                            @foreach (var trick in Model.Tricks)
+                            {
+                                <li>@trick</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>@Model.Name doesn't know any tricks yet. Teach him some!</p>
+                    }
+                }
+        </section>
+    </main>
+    
+</body>
+</html>

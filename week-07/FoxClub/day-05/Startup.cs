@@ -1,9 +1,15 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using day05.Interfaces;
+using day05.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BankOfSimba
+namespace day_05
 {
     public class Startup
     {
@@ -12,6 +18,8 @@ namespace BankOfSimba
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<IFox, FoxService>();
+            services.AddSingleton<IFood, FoodService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -21,10 +29,8 @@ namespace BankOfSimba
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseStaticFiles();
             app.UseMvc();
-
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
